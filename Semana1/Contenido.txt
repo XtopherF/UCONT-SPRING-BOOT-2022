@@ -6,11 +6,12 @@ CONTENIDO
 4.- Spring Data con JPA
 5.- Desarrollo de un CRUD
 
-Software
+SOFTWARE
 ------------------------------
 - IDE: STS
 - Base de datos: Oracle
 
-
-
+REPOSITORIO GITHUB
+----------------------------------
+https://github.com/gcoronelc/UCONT-SPRING-BOOT-2022
 
