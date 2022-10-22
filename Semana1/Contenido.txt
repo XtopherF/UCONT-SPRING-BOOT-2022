@@ -1,0 +1,16 @@
+CONTENIDO
+-----------------------------
+1.- Spring core
+2.- Spring MVC
+3.- Thymeleaf
+4.- Spring Data con JPA
+5.- Desarrollo de un CRUD
+
+Software
+------------------------------
+- IDE: STS
+- Base de datos: Oracle
+
+
+
+
