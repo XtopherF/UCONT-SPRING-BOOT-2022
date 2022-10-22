@@ -1,18 +1,15 @@
-![DESARROLLO WEB CON SPRING BOOT](https://raw.githubusercontent.com/gcoronelc/UNI-FIIS-SPRING-BOOT-01/main/Imagenes/portada.png)
-
-![CALENDARIO](https://raw.githubusercontent.com/gcoronelc/UNI-FIIS-SPRING-BOOT-01/main/Imagenes/Calendario.png)
+![DESARROLLO WEB CON SPRING BOOT](https://raw.githubusercontent.com/gcoronelc/UCONT-SPRING-BOOT-2022/main/Imagenes/curso.png)
 
 # DATOS GENERALES
 
-- Lugar: UNI - FIIS
-- Horario: Martes de 13 a 17 y Viernes de 08-12 Horas
-- Inicio: 11-OCT-2022
-- Duración: 48 Horas
-- Dirección: https://goo.gl/maps/ZY5zZ1LPUp7aK6g98
+- Lugar: UNIVERSIDAD CONTINENTAL
+- Horario: Sabados de 15 a 18 Horas
+- Inicio: 22-OCT-2022
+- Duración: 15 Horas
 
 # DOCENTE
 
-- Docente: Ing. ERIC GUSTAVO CORONEL CASTILLO
+- Docente: Ing. Eric Gustavo Coronel Castillo
 - Blog: http://www.desarrollasoftware.com/
 - Canal Youtube: https://www.youtube.com/channel/UC7c3C0Dtr6HnSpxAAWN643A?sub_confirmation=1
 - Cursos Virtuales: http://gcoronelc.github.io
