@@ -1,5 +1,8 @@
 package pe.edu.ucont.app.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import pe.edu.ucont.app.model.ComboModel;
 import pe.edu.ucont.app.model.MateModel;
 import pe.edu.ucont.app.service.MateService;
 
@@ -70,4 +74,23 @@ public class AppController {
 		model.addAttribute("modelo",mateModel);
 		return "matematica";
 	}
+	
+	@GetMapping("/venta")
+	public String venta(Model model) {
+		//cargarCombos(model);
+		return "venta";
+	}
+
+	@ModelAttribute
+	private void cargarCombos(Model model) {
+		List<ComboModel> productos = new ArrayList<>();
+		productos.add(new ComboModel(1, "Camisa"));
+		productos.add(new ComboModel(2, "Pantalon"));
+		productos.add(new ComboModel(3, "Zapatos"));
+		productos.add(new ComboModel(4, "Casaca"));
+		productos.add(new ComboModel(5, "Polo"));
+		model.addAttribute("productos",productos);
+	}
+	
+	
 }
