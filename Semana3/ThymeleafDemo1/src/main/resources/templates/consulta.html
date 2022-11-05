@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CONSULTA</title>
+</head>
+<body>
+	<h1>CONSULTAR PRODUCTO</h1>
+	<form method="post" action="consulta">
+		<label>Nombre:</label> <input type="text" name="nombre" />
+		<button type="submit">Consultar</button>
+	</form>
+
+	<th:block th:if="${mensaje!=null || dto!=null}">
+
+		<h1>RESULTADO</h1>
+
+		<div th:if="${mensaje!=null}" th:text="${mensaje}"></div>
+
+		<div th:if="${dto!=null}" th:object=${dto}>
+			<p>
+				Nombre: <span th:text="*{nombre}"></span>
+			</p>
+			<p>
+				Precio: <span th:text="*{precio}"></span>
+			</p>
+			<p>
+				Stock: <span th:text="*{stock}"></span>
+			</p>
+		</div>
+
+	</th:block>
+</body>
+</html>
