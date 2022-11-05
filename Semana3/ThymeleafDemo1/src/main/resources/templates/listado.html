@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LISTADO DE PRODUCTOS</title>
+</head>
+<body>
+	<h1>LISTADO DE PRODUCTOS</h1>
+	<table border="1">
+		<tr>
+			<th>NOMBRE</th>
+			<th>PRECIO</th>
+			<th>STOCK</th>
+		</tr>
+		<tr th:each="prod : ${lista}">
+			<td th:text="${prod.nombre}"></td>
+			<td th:text="${prod.precio}"></td>
+			<td th:text="${prod.stock}"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

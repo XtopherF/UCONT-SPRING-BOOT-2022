@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>PRODUCTO</title>
+</head>
+<body>
+	<h1>PRODUCTO</h1>
+	<div th:object=${dto}>
+		<p>Nombre: <span th:text="*{nombre}"></span></p>
+		<p>Precio: <span th:text="*{precio}"></span></p>
+		<p>Stock: <span th:text="*{stock}"></span></p>
+	</div>
+</body>
+</html>
