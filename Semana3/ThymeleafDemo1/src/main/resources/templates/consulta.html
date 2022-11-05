@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>CONSULTA</title>
+<head th:replace="plantilla/plantilla::head">
 </head>
 <body>
-	<h1>CONSULTAR PRODUCTO</h1>
-	<form method="post" action="consulta">
-		<label>Nombre:</label> <input type="text" name="nombre" />
-		<button type="submit">Consultar</button>
-	</form>
 
-	<th:block th:if="${mensaje!=null || dto!=null}">
+	<header th:replace="plantilla/plantilla::header"> </header>
 
-		<h1>RESULTADO</h1>
+	<div class="container">
+		<h1>CONSULTAR PRODUCTO</h1>
 
-		<div th:if="${mensaje!=null}" th:text="${mensaje}"></div>
+		<form method="post" action="consulta">
+			<div class="form-group row">
+				<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="nombre" name="nombre"
+						placeholder="Nombre del producto">
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-10 offset-sm-2">
+					<button type="submit" class="btn btn-primary">Consultar</button>
+				</div>
+			</div>
+		</form>
 
-		<div th:if="${dto!=null}" th:object=${dto}>
-			<p>
-				Nombre: <span th:text="*{nombre}"></span>
-			</p>
-			<p>
-				Precio: <span th:text="*{precio}"></span>
-			</p>
-			<p>
-				Stock: <span th:text="*{stock}"></span>
-			</p>
-		</div>
+		<th:block th:if="${mensaje!=null || dto!=null}">
 
-	</th:block>
+			<h1>RESULTADO</h1>
+
+			<div class="alert alert-primary" role="alert" th:if="${mensaje!=null}" th:text="${mensaje}">
+			</div>
+
+
+			<div th:if="${dto!=null}" th:object=${dto}>
+				<table class="table">
+					<thead class="thead-light">
+						<tr>
+							<th>DATO</th>
+							<th>VALOR</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nombre</td>
+							<td th:text="*{nombre}"></td>
+						</tr>
+						<tr>
+							<td>Precio</td>
+							<td th:text="*{precio}"></td>
+						</tr>
+						<tr>
+							<td>Stock</td>
+							<td th:text="*{stock}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</th:block>
+
+	</div>
+
+	<footer th:replace="plantilla/plantilla::footer"> </footer>
+
 </body>
 </html>
