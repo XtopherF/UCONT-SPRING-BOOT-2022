@@ -1,5 +1,11 @@
 package pe.edu.ucont.app.repository;
 
-public interface EmpleadoRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import pe.edu.ucont.app.model.Empleado;
+
+@Repository
+public interface EmpleadoRepository extends CrudRepository<Empleado, Long>{
 
 }
