@@ -1,8 +1,10 @@
 package pe.edu.ucont.app.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import pe.edu.ucont.app.model.Empleado;
@@ -11,6 +13,9 @@ import pe.edu.ucont.app.service.EmpleadoService;
 
 @Service
 public class EmpleadoServImpl implements EmpleadoService{
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
 	private EmpleadoRepository empleadoRepository;
@@ -34,4 +39,17 @@ public class EmpleadoServImpl implements EmpleadoService{
 	public void eliminar(Long id) {
 		empleadoRepository.deleteById(id);
 	}
+
+	@Override
+	public List<Map<String, Object>> leerEmpleados() {
+		String query = "select IDEMP, NOMBRE, APELLIDO EMAIL, TELEFONO from empleado";
+		return jdbcTemplate.queryForList(query);
+	}
+
+	@Override
+	public List<Empleado> buscarPorNombre(String nombre) {
+		return empleadoRepository.findByNombreContainingIgnoreCase(nombre);
+	}
+	
+	
 }

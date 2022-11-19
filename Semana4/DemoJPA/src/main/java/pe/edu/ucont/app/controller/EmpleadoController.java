@@ -1,6 +1,7 @@
 package pe.edu.ucont.app.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,12 @@ public class EmpleadoController {
 		return empleado;
 	}
 
+	@GetMapping("/leerTodos")
+	@ResponseBody
+	public List<Map<String, Object>> leerTodos() {
+		return empleadoService.leerEmpleados();
+	}
+
 	@GetMapping("/eliminar/{id}")
 	@ResponseBody
 	public Empleado eliminar(@PathVariable("id") Long id) {
@@ -47,7 +54,7 @@ public class EmpleadoController {
 	public String formulario() {
 		return "formulario";
 	}
-	
+
 	@PostMapping("/grabar")
 	@ResponseBody
 	public Empleado guardar(@ModelAttribute Empleado empleado) {
@@ -56,4 +63,11 @@ public class EmpleadoController {
 		System.err.println(empleado);
 		return bean;
 	}
+
+	@GetMapping("/buscar/{nombre}")
+	@ResponseBody
+	public List<Empleado> buscarPorNombre(@PathVariable("nombre") String nombre) {
+		return empleadoService.buscarPorNombre(nombre);
+	}
+
 }
