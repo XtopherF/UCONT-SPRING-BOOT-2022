@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+</head>
+<body>
+
+	<header th:replace="plantilla/plantilla :: header"> </header>
+
+	<div class="container">
+
+		<form th:action="@{/productos/grabar}" th:object="${producto}"
+			method="post">
+
+			<input type="hidden" th:field="*{id}" id="id" />
+
+			<div class="card bg-light">
+
+				<div class="card-header bg-info text-white" th:text="${titulo}"></div>
+
+				<div class="card-body">
+					<div class="form-group row">
+						<label class="col-md-2" for="categoria">Categoría:</label>
+						<div class="col-md-10">
+							<select th:field="*{categoria}"
+								class="form-control form-control-sm col-md-10" id="categoria">
+								<option th:each="categoria:${categorias}"
+									th:value="${categoria.id}" th:text="${categoria.nombre}" />
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-2" for="nombre">Nombre:</label>
+						<div class="col-md-10">
+							<input type="text" th:field="*{nombre}"
+								class="form-control form-control-sm" id="nombre"
+								placeholder="Nombres del producto" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-2" for="precio">Precio:</label>
+						<div class="col-md-10">
+							<input type="text" th:field="*{precio}"
+								class="form-control form-control-sm" id="precio"
+								placeholder="Precio del producto" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></small>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-md-2" for="stock">Stock:</label>
+						<div class="col-md-10">
+							<input type="text" th:field="*{stock}"
+								class="form-control form-control-sm" id="stock"
+								placeholder="Stock del producto" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}"></small>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="card-footer bg-light">
+					<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+				</div>
+
+			</div>
+		</form>
+
+	</div>
+
+	<footer th:replace="plantilla/plantilla :: footer"> </footer>
+
+</body>
+</html>

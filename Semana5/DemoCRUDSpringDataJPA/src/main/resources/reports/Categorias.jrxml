@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Categorias" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="e6fd2265-c8dd-4382-a895-976a46a852ba">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ORACLE-VENTAS"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT IDCAT AS ID, NOMBRE FROM CATEGORIA]]>
+	</queryString>
+	<field name="ID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOMBRE"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="40" width="439" height="30" forecolor="#000000" uuid="c9f277de-1767-44da-be14-fe8e8bf1b208"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[LISTADO DE CATEGORIAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="259" height="30" forecolor="#0066CC" uuid="894cf682-53c6-4d7c-8c3b-02b1293ac3e4"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISTEMA COMERCIAL]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="33" y="0" width="100" height="18" uuid="e8a6c8d2-27a9-4478-bb48-ecc6c0601d3c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fff0f9a-fa3f-4c34-b8b0-df9c20957579"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="271" height="19" uuid="68ed7aac-5542-4bba-91e7-32754f4254da">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="701c6de4-1639-4634-a0e2-d7c6f1ebc0bc"/>
+				</reportElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="33" y="0" width="100" height="18" uuid="df5e9e2a-51bd-4be5-860e-fcb236c91829">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2fff0f9a-fa3f-4c34-b8b0-df9c20957579"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="271" height="19" uuid="14879187-9bba-4027-8278-b1d96929bc83">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="701c6de4-1639-4634-a0e2-d7c6f1ebc0bc"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
